@@ -25,17 +25,17 @@
         
         $(document).ready(function() {
 
-   $.getJSON('GOOGLE URL HERE', function(data) {
+   $.getJSON('https://shaneropp20.github.io/databases/', function(data) {
      $('#dictionary').empty();
       $.each(data, function(entryIndex, entry) {
-         var html = '<div class="entry">';
-         html += '<h3 class="term">' + entry['name'] + '</h3>';
-         html += '<div class="part">' + entry['website'] + '</div>';
-         html += '<div class="definition">';
-         html += entry['rating'];
-         html += '</div>';
-         html += '</div>';
-         $('#dictionary').append(html);
+        var html = '<div class="entry">';
+     html += '<h3 class="term">' + data.result['name'] + '</h3>';
+     html += '<div class="part">' + data.result['website'] + '</div>';
+     html += '<div class="definition">';
+     html += entry['rating'];
+     html += '</div>';
+     html += '</div>';
+     $('#dictionary').append(html);
       });
    });
    return false;
